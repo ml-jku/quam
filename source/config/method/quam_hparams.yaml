@@ -1,0 +1,26 @@
+quam:
+  n_classes: ${ATTACK_N_CLASSES|10}
+  n_classes_total: ${TOTAL_CLASSES|10}
+  n_epochs: ${OPT_EPOCHS|4}
+  penalties_per_optimisation_step: 1
+  # use_main_memory_for_results: true
+  gamma: ${OPT_GAMMA|1.e-2}
+  c_scheduling:
+    # change to 'lin' if using the linear c scheduler
+    type: ${LR_SCHEDULE|exp}
+    c0: ${OPT_C0|1.e+1}
+    eta: ${OPT_ETA|2.e+0}
+    update_c_every: ${OPT_UPDATE_C_EVERY|4}
+  opt_lr_schedule:
+    type: ${LR_SCHEDULE|exp}
+    value: ${OPT_ETA|10}
+    # match the c scheduler rate
+    update_every: ${OPT_UPDATE_C_EVERY|4}
+  optimizer_kwargs:
+    lr: ${OPT_LR|1.e-3}
+    weight_decay: ${OPT_WEIGHT_DECAY|3.e-4}
+    # 1.e-3
+    # scientific notation numbers should be written this way in yaml
+  loss_fn: "crossentropy"
+  toggle_train_mode_for_optimisation: false
+  # set true for resnet or anything else that uses batchnorm and no dropout

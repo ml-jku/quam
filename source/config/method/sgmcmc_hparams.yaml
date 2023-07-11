@@ -1,0 +1,10 @@
+sgmcmc:
+  # if 1 usual SG-MCMC, otherwise cyclic SG-MCMC (cSG-MCMC)
+  n_cycles: ${SGMCMC_N_CYCLES|1}
+  n_iterations: ${SGMCMC_N_ITER|6000}
+  n_samples: ${SGMCMC_N_SAMPLES|4000}
+  # if 0 SG-MCMC is SGLD, if >0 SG-MCMC is SG-HMC
+  momentum: ${SGMCMC_MOMENTUM|0.}
+  lr: ${SGMCMC_LR|1.e-2}
+  sched_beta: ${SGMCMC_BETA|0.8}
+  temperature: ${SGMCMC_TEMP|2.e-5}

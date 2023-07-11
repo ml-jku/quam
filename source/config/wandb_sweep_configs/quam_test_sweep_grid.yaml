@@ -1,0 +1,47 @@
+method: 'bayes'
+metric:
+  goal: 'maximize'
+  name: 'ood_uncertainty_our_epistemic_AUROC'
+parameters:
+  OPT_WEIGHT_DECAY:
+    values:
+      - 1.e-4
+      - 5.e-4
+      - 1.e-3
+  OPT_GAMMA:
+    values:
+      - 1.e-3
+      - 5.e-3
+      - 1.e-2
+  OPT_C0:
+    values:
+      - 10
+  OPT_ETA:
+    values:
+      - 1.5
+      - 2.
+      - 5.
+      - 10.
+  OPT_UPDATE_C_EVERY:
+    values:
+      - 2
+      - 4
+      - 8
+  LR_SCHEDULE:
+    values: ['lin', 'const']
+#    values: ['lin', 'const']
+  OPT_LR:
+    values:
+      - 1.e-3
+      - 2.e-3
+      - 4.e-3
+  EMA_WINDOW:
+    values:
+      - 1
+      - 3
+      - 5
+  OPT_EPOCHS:
+    values:
+      - 4
+      - 8
+      - 16

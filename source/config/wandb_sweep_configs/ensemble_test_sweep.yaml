@@ -1,0 +1,7 @@
+method: 'bayes'
+metric:
+  goal: 'maximize'
+  name: 'ood_uncertainty_our_epistemic_AUROC'
+parameters:
+  N_ENSEMBLES:
+    values: [2, 5, 10]

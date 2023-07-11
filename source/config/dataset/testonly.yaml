@@ -1,0 +1,13 @@
+test_dl:
+    id: ${RUN_ON_DATASET}
+    subset: ${DS_SUBSET|test}
+    properties: {}
+    ds_wrappers:
+      - wrap_shuffle:
+          rng_seed: ${RNG_SEED}
+      - wrap_subset:
+          subset_str: ${RUN_ON_SUBSAMPLE}
+    dl_wrappers: []
+    dl_properties:
+      batch_size: ${DS_BS|1}
+

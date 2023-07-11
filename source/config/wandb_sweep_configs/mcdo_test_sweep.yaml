@@ -1,0 +1,10 @@
+method: 'bayes'
+metric:
+  goal: 'maximize'
+  name: 'ood_uncertainty_our_epistemic_AUROC'
+parameters:
+  N_SAMPLES:
+    values: [32, 128, 512, 2048]
+  P_DROPOUT:
+    min: 1.e-2
+    max: 9.e-1

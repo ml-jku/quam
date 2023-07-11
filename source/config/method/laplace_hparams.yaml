@@ -1,0 +1,8 @@
+laplace:
+  likelihood: ${LAPLACE_LIKELIHOOD|classification}
+  n_samples: ${LAPLACE_N_SAMPLES|4000}
+  subset_of_weights: ${LAPLACE_SUBSET_OF_WEIGHTS|last_layer}
+  hessian_structure: ${LAPLACE_HESSIAN_STRUCTURE|diag}
+  pred_type: ${LAPLACE_PRED_TYPE|glm}
+  h_epochs: ${LAPLACE_H_EPOCHS|5000}
+  lr: ${LAPLACE_LR|1.e-3}

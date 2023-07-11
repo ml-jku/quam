@@ -1,0 +1,23 @@
+dataset: "imagenet_encoded"
+network: "imagenet_ll_stock"
+method: "quam_hparams_hp${HP_SEARCH_ID}"
+env:
+  ATTACK_N_CLASSES: 1000
+  TOTAL_CLASSES: 1000
+  MODEL_DIR: "pretrained_models"
+  EXPERIMENT_DUMP: "experiment_runs"
+  USE_BFLOAT: true
+save_to:
+  path: ${PUBWORK}/hp_search/${HP_SEARCH_ID}/${RUN_ON_DATASET}/
+  prefix: ${RUN_PREFIX|}
+  items:
+    preds.npy:
+      - average_net_pred
+      - sample_preds
+    aux.pkl:
+      - target
+      - obj_loss
+      - train_loss
+      - pen_loss
+      - model_train_loss
+

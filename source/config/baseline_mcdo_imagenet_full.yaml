@@ -1,0 +1,16 @@
+dataset: "testonly"
+network: "efficientnet"
+method: "mcdo_hparams"
+# WANDB_RNAME assumed to be set
+env:
+  MODEL_DIR: "pretrained_models"
+  EXPERIMENT_DUMP: "experiment_runs"
+  USE_METHOD_CONF: "baseline_mcdo_full_in"
+save_to:
+  path: ${PUBWORK}/experiment_runs/${USE_METHOD_CONF}/${RNG_SEED}/${RUN_ON_DATASET}/
+  prefix: 
+  items:
+    preds.pkl:
+      - average_net_pred
+      - sample_preds
+      - target

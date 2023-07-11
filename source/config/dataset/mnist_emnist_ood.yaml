@@ -1,0 +1,24 @@
+train_dl:
+    id: "mnist"
+    subset: "train"
+    properties: {}
+    ds_wrappers:
+      wrap_subset:
+        subset_str: "0:8192"
+    dl_wrappers:
+      wrap_device:
+        device: ${CUDA_DEVICE|cuda:0}
+    dl_properties:
+      batch_size: 512
+# configure the dataset with the expected environment variables
+test_dl:
+    id: ${RUN_ON_DATASET}
+    subset: "test"
+    properties: {} 
+    ds_wrappers:
+      wrap_subset:
+        subset_str: ${RUN_ON_SUBSAMPLE}
+    dl_wrappers: {}
+    dl_properties:
+      batch_size: 1
+

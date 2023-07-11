@@ -1,0 +1,2 @@
+mc_dropout:
+  n_samples: 2048

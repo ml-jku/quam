@@ -1,0 +1,35 @@
+env:
+  EXPERIMENT_NAME: "baseline_ensembles_retention"
+  MODEL_DIR: "pretrained_models"
+  RUN_ON_SUBSAMPLE: '0:1024'
+  CUDA_DEVICE: "cuda:0"
+  USE_METHOD_CONF: "baseline_ensembles_imagenet"
+  ID_DATA: "imagenet-projected"
+#  OOD_DATA: "imagenet-a-projected"
+  OOD_DATA: ''
+load_samples:
+  id_uncerts:
+    config: ${USE_METHOD_CONF}
+    env:
+      RUN_ON_DATASET: ${ID_DATA}
+      DS_SUBSET: test
+#  ood_uncerts:
+#    config: ${USE_METHOD_CONF}
+#    env:
+#      RUN_ON_DATASET: ${OOD_DATA}
+#      DS_SUBSET: test
+samples2uncerts:
+  uncertainty_our:
+    filter:
+      name: all
+# enable for non-tempered version
+    unc_params: {}
+experiment_evaluation:
+#  ood: {}
+  retention:
+    provide_extras:
+      - target
+      - average_net_pred
+save_to:
+  path: ${BASE_WORKDIR}/experiment_runs/${EXPERIMENT_NAME}_${ID_DATA}_${OOD_DATA}/${RNG_SEED}/
+

@@ -1,0 +1,17 @@
+dataset: "mnist_ood"
+# or cifar or whatever
+network: "mnist_lenet_ensemble" 
+# or resnet or whatever
+method: "ensemble"
+# WANDB_RNAME assumed to be set
+env:
+  MODEL_DIR: "pretrained_models"
+  EXPERIMENT_DUMP: "experiment_runs"
+save_to:
+  path: ${BASE_WORKDIR}/experiment_runs/${USE_METHOD_CONF}/${RNG_SEED}/${RUN_ON_DATASET}/
+  prefix:
+  items:
+    preds.pkl:
+      - average_net_pred
+      - sample_preds
+      - target

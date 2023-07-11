@@ -1,0 +1,18 @@
+dataset: "imagenet_encoded" # or cifar or whatever
+network: "imagenet_ll" # or resnet or whatever
+method: "sgmcmc_hparams"
+# WANDB_RNAME assumed to be set
+env:
+  MODEL_DIR: "pretrained_models"
+  EXPERIMENT_DUMP: "experiment_runs"
+  DS_BATCHSIZE: 1024
+  RUN_ON_SUBSAMPLE: "0:1024"
+  INENC_PREFIX: s_
+save_to:
+  path: ${BASE_WORKDIR}/experiment_runs/baseline_sghmc_imagenet/${RNG_SEED}/${RUN_ON_DATASET}/
+  prefix: 
+  items:
+    preds.pkl:
+      - average_net_pred
+      - sample_preds
+      - target

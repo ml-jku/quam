@@ -1,0 +1,55 @@
+net_id: "ensemble"
+device: ${CUDA_DEVICE|cuda:0}
+net_properties:
+  take_n: 9
+  configs:
+    - net_id: "efficient_net"
+      net_properties:
+        version: s
+        use_projections: false
+        init_last_layer: false
+    - net_id: "efficient_net"
+      net_properties:
+        version: m
+        use_projections: false
+        init_last_layer: false
+    - net_id: "efficient_net"
+      net_properties:
+        version: b0
+        use_projections: false
+        init_last_layer: false
+    - net_id: "efficient_net"
+      net_properties:
+        version: b1
+        use_projections: false
+        init_last_layer: false
+    - net_id: "efficient_net"
+      net_properties:
+        version: b2
+        use_projections: false
+        init_last_layer: false
+    - net_id: "efficient_net"
+      net_properties:
+        version: b3
+        use_projections: false
+        init_last_layer: false
+    - net_id: "efficient_net"
+      net_properties:
+        version: b4
+        use_projections: false
+        init_last_layer: false
+    - net_id: "efficient_net"
+      net_properties:
+        version: b5
+        use_projections: false
+        init_last_layer: false
+    - net_id: "efficient_net"
+      net_properties:
+        version: b6
+        use_projections: false
+        init_last_layer: false
+    - net_id: "efficient_net"
+      net_properties:
+        version: b7
+        use_projections: false
+        init_last_layer: false

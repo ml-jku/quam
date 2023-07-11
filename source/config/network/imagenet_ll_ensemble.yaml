@@ -1,0 +1,45 @@
+net_id: "ensemble"
+device: ${CUDA_DEVICE|cuda:0}
+net_properties:
+  take_n: 10
+  configs:
+    - net_id: "efficient_net_ll"
+      device: ${CUDA_DEVICE|cuda:0}
+      net_properties:
+        checkpoint: "${BASE_WORKDIR}/${MODEL_DIR}/efficientnet_stockpile/seed_${RNG_SEED|42}/model_0.pt"
+    - net_id: "efficient_net_ll"
+      device: ${CUDA_DEVICE|cuda:0}
+      net_properties:
+        checkpoint: "${BASE_WORKDIR}/${MODEL_DIR}/efficientnet_stockpile/seed_${RNG_SEED|42}/model_1.pt"
+    - net_id: "efficient_net_ll"
+      device: ${CUDA_DEVICE|cuda:0}
+      net_properties:
+        checkpoint: "${BASE_WORKDIR}/${MODEL_DIR}/efficientnet_stockpile/seed_${RNG_SEED|42}/model_2.pt"
+    - net_id: "efficient_net_ll"
+      device: ${CUDA_DEVICE|cuda:0}
+      net_properties:
+        checkpoint: "${BASE_WORKDIR}/${MODEL_DIR}/efficientnet_stockpile/seed_${RNG_SEED|42}/model_3.pt"
+    - net_id: "efficient_net_ll"
+      device: ${CUDA_DEVICE|cuda:0}
+      net_properties:
+        checkpoint: "${BASE_WORKDIR}/${MODEL_DIR}/efficientnet_stockpile/seed_${RNG_SEED|42}/model_4.pt"
+    - net_id: "efficient_net_ll"
+      device: ${CUDA_DEVICE|cuda:0}
+      net_properties:
+        checkpoint: "${BASE_WORKDIR}/${MODEL_DIR}/efficientnet_stockpile/seed_${RNG_SEED|42}/model_5.pt"
+    - net_id: "efficient_net_ll"
+      device: ${CUDA_DEVICE|cuda:0}
+      net_properties:
+        checkpoint: "${BASE_WORKDIR}/${MODEL_DIR}/efficientnet_stockpile/seed_${RNG_SEED|42}/model_6.pt"
+    - net_id: "efficient_net_ll"
+      device: ${CUDA_DEVICE|cuda:0}
+      net_properties:
+        checkpoint: "${BASE_WORKDIR}/${MODEL_DIR}/efficientnet_stockpile/seed_${RNG_SEED|42}/model_7.pt"
+    - net_id: "efficient_net_ll"
+      device: ${CUDA_DEVICE|cuda:0}
+      net_properties:
+        checkpoint: "${BASE_WORKDIR}/${MODEL_DIR}/efficientnet_stockpile/seed_${RNG_SEED|42}/model_8.pt"
+    - net_id: "efficient_net_ll"
+      device: ${CUDA_DEVICE|cuda:0}
+      net_properties:
+        checkpoint: "${BASE_WORKDIR}/${MODEL_DIR}/efficientnet_stockpile/seed_${RNG_SEED|42}/model_9.pt"

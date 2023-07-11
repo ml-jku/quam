@@ -1,0 +1,6 @@
+net_id: "efficient_net_ll"
+device: ${CUDA_DEVICE|cuda:0}
+net_properties:
+  checkpoint: "${BASE_WORKDIR}/${MODEL_DIR}/efficientnet_stockpile/seed_${RNG_SEED}/model_0.pt"
+  use_bfloat: ${USE_BFLOAT|true}
+  unpack_linear: ${UNPACK_LINEAR|false}  

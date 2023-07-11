@@ -1,0 +1,25 @@
+dataset: "mnist_ood"
+network: "mnist_lenet"
+method: "quam_hparams"
+env:
+  MODEL_DIR: "pretrained_models"
+  EXPERIMENT_DUMP: "experiment_runs"
+save_to:
+  path: ${BASE_WORKDIR}/experiment_runs/${USE_METHOD_CONF}/${RNG_SEED}/${RUN_ON_DATASET}/
+  prefix: ${RUN_PREFIX|}
+  items:
+    preds.pkl:
+      - average_net_pred
+      - sample_preds
+      - target
+      - obj_loss
+      - train_loss
+      - pen_loss
+      - model_train_loss
+    losses.pkl:
+      - obj_loss
+      - train_loss
+      - pen_loss
+      - model_train_loss
+#    models.pkl:
+#      - ensemble

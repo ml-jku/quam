@@ -1,0 +1,4 @@
+net_id: "efficient_net_ll"
+device: ${CUDA_DEVICE|cuda:0}
+net_properties:
+  checkpoint: "stock"

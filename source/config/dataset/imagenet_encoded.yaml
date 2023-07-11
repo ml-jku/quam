@@ -1,0 +1,32 @@
+train_dl:
+    id: "imagenet-projected"
+    subset: "train"
+    properties:
+      short: true
+      prefix: ${INENC_PREFIX|s_}
+    ds_wrappers:
+      - wrap_shuffle:
+          rng_seed: ${RNG_SEED}
+      - wrap_subset:
+          subset_str: "0:32768"
+    dl_wrappers:
+      - wrap_device:
+          device: ${CUDA_DEVICE|cuda:0}
+    dl_properties:
+      batch_size: 512
+# configure the dataset with the expected environment variables
+test_dl:
+    id: ${RUN_ON_DATASET}
+    subset: ${DS_SUBSET|test}
+    properties:
+      prefix: ${INENC_PREFIX|s_}
+    ds_wrappers:
+      - wrap_shuffle:
+          rng_seed: ${RNG_SEED}
+      - wrap_subset:
+          subset_str: ${RUN_ON_SUBSAMPLE}
+    dl_wrappers:
+      - wrap_device:
+          device: ${CUDA_DEVICE|cuda:0}
+    dl_properties:
+      batch_size: ${DS_BATCHSIZE|1}

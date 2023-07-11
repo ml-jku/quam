@@ -1,0 +1,7 @@
+net_id: "efficient_net"
+device: ${CUDA_DEVICE|cuda:0}
+net_properties:
+  version: b4
+  use_projections: false
+  init_last_layer: false
+

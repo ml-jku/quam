@@ -1,0 +1,65 @@
+net_id: "ensemble"
+device: ${CUDA_DEVICE|cuda:0}
+net_properties:
+  take_n: ${N_ENSEMBLES|10}
+  configs:
+    - net_id: "mnist_lenet"
+      net_properties:
+        p_dropout: 0.2
+        out_features: 10
+        mnist: true,
+        checkpoint: "${BASE_WORKDIR}/${MODEL_DIR}/LeNet_MNIST/seed_${RNG_SEED}/model_0.pt"
+    - net_id: "mnist_lenet"
+      net_properties:
+        p_dropout: 0.2
+        out_features: 10
+        mnist: true,
+        checkpoint: "${BASE_WORKDIR}/${MODEL_DIR}/LeNet_MNIST/seed_${RNG_SEED}/model_1.pt"
+    - net_id: "mnist_lenet"
+      net_properties:
+        p_dropout: 0.2
+        out_features: 10
+        mnist: true,
+        checkpoint: "${BASE_WORKDIR}/${MODEL_DIR}/LeNet_MNIST/seed_${RNG_SEED}/model_2.pt"
+    - net_id: "mnist_lenet"
+      net_properties:
+        p_dropout: 0.2
+        out_features: 10
+        mnist: true,
+        checkpoint: "${BASE_WORKDIR}/${MODEL_DIR}/LeNet_MNIST/seed_${RNG_SEED}/model_3.pt"
+    - net_id: "mnist_lenet"
+      net_properties:
+        p_dropout: 0.2
+        out_features: 10
+        mnist: true,
+        checkpoint: "${BASE_WORKDIR}/${MODEL_DIR}/LeNet_MNIST/seed_${RNG_SEED}/model_4.pt"
+    - net_id: "mnist_lenet"
+      net_properties:
+        p_dropout: 0.2
+        out_features: 10
+        mnist: true,
+        checkpoint: "${BASE_WORKDIR}/${MODEL_DIR}/LeNet_MNIST/seed_${RNG_SEED}/model_5.pt"
+    - net_id: "mnist_lenet"
+      net_properties:
+        p_dropout: 0.2
+        out_features: 10
+        mnist: true,
+        checkpoint: "${BASE_WORKDIR}/${MODEL_DIR}/LeNet_MNIST/seed_${RNG_SEED}/model_6.pt"
+    - net_id: "mnist_lenet"
+      net_properties:
+        p_dropout: 0.2
+        out_features: 10
+        mnist: true,
+        checkpoint: "${BASE_WORKDIR}/${MODEL_DIR}/LeNet_MNIST/seed_${RNG_SEED}/model_7.pt"
+    - net_id: "mnist_lenet"
+      net_properties:
+        p_dropout: 0.2
+        out_features: 10
+        mnist: true,
+        checkpoint: "${BASE_WORKDIR}/${MODEL_DIR}/LeNet_MNIST/seed_${RNG_SEED}/model_8.pt"
+    - net_id: "mnist_lenet"
+      net_properties:
+        p_dropout: 0.2
+        out_features: 10
+        mnist: true,
+        checkpoint: "${BASE_WORKDIR}/${MODEL_DIR}/LeNet_MNIST/seed_${RNG_SEED}/model_9.pt"

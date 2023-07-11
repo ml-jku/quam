@@ -1,0 +1,21 @@
+env:
+  EXPERIMENT_NAME: "ood_mnist"
+  MODEL_DIR: "pretrained_models"
+#  ID_DATA: "mnist"
+#  OOD_DATA: "emnist"
+  CUDA_DEVICE: "cuda:0"
+load_samples:
+  id_uncerts:
+    path: ${BASE_WORKDIR}/experiment_runs/${USE_METHOD_CONF}/${RNG_SEED}/${ID_DATA}/preds.pkl
+  ood_uncerts:
+    path: ${BASE_WORKDIR}/experiment_runs/${USE_METHOD_CONF}/${RNG_SEED}/${OOD_DATA}/preds.pkl
+samples2uncerts:
+  uncertainty_our:
+    filter:
+      name: softmax
+      temperature: ${SM_TEMPERATURE|1.e-3}
+    unc_params: {}
+experiment_evaluation:
+  ood: {}
+save_to:
+  path: ${BASE_WORKDIR}/experiment_runs/${USE_METHOD_CONF}/${RNG_SEED}/${ID_DATA}_${OOD_DATA}/

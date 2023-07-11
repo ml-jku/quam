@@ -1,0 +1,12 @@
+method: 'grid'
+metric:
+  goal: 'maximize'
+  name: 'ood_uncertainty_our_epistemic_AUROC'
+parameters:
+  # copy and paste the dump of the parameters from the best run, if not just sweeping with extra dimension
+  # sm_temperature is the only parameter to be selected for
+  SM_TEMPERATURE:
+    distribution: qlog_uniform
+    step: 
+    min: -15
+    max: 5

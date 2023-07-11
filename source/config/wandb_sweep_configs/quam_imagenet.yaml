@@ -1,0 +1,28 @@
+method: 'grid'
+parameters:
+  OPT_WEIGHT_DECAY:
+    values:
+      - 1.e-4
+  OPT_C0:
+    values:
+      - 1.
+  OPT_ETA:
+    values:
+      # - 1.0025
+      # - 1.005
+      # - 1.0075
+      # - 1.01
+      - 1.0125
+      - 1.015
+  OPT_UPDATE_C_EVERY:
+    values:
+      - 1.
+  OPT_LR:
+    values:
+      # - 5.e-3
+      - 1.e-3
+      - 5.e-4
+      # - 1.e-4
+  OPT_EPOCHS:
+    values:
+      - 5.

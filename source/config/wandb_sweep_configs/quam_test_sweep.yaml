@@ -1,0 +1,26 @@
+method: 'bayes'
+metric:
+  goal: 'maximize'
+  name: 'ood_uncertainty_our_epistemic_AUROC'
+parameters:
+  OPT_C0:
+    distribution: uniform
+    min: 6.
+    max: 15.
+  OPT_ETA:
+    distribution: uniform
+    min: 1.01e+0
+    max: 2.e+0
+  OPT_UPDATE_C_EVERY:
+    distribution: q_uniform
+    q: 1.
+    min: 1
+    max: 16
+  LR_SCHEDULE:
+    value: 'exp'
+  OPT_LR:
+    value: 1.e-3
+  OPT_WEIGHT_DECAY:
+    value: 5.e-4
+  OPT_EPOCHS:
+    value: 2

@@ -1,0 +1,17 @@
+dataset: "imagenet_encoded"
+network: "imagenet_ll"
+method: "laplace_hparams"
+# WANDB_RNAME assumed to be set
+env:
+  MODEL_DIR: "pretrained_models"
+  EXPERIMENT_DUMP: "experiment_runs"
+  DS_BATCHSIZE: 1024
+  RUN_ON_SUBSAMPLE: "0:1024"
+save_to:
+  path: ${BASE_WORKDIR}/experiment_runs/${USE_METHOD_CONF}_${ID_DATA}_${OOD_DATA}/${RNG_SEED}/
+  prefix:
+  items:
+    preds.pkl:
+      - average_net_pred
+      - sample_preds
+      - target

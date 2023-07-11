@@ -1,0 +1,29 @@
+train_dl:
+    id: "mnist"
+    subset: "train"
+    properties: {}
+    ds_wrappers:
+      - wrap_shuffle:
+          rng_seed: ${RNG_SEED}
+      - wrap_subset:
+          # 97 x 512 batches
+          subset_str: "0:49664"
+    dl_wrappers:
+      - wrap_device:
+          device: ${CUDA_DEVICE|cuda:0}
+    dl_properties:
+      batch_size: 512
+# configure the dataset with the expected environment variables
+test_dl:
+    id: ${RUN_ON_DATASET}
+    subset: ${DS_SUBSET|test}
+    properties: {} 
+    ds_wrappers:
+      - wrap_shuffle:
+          rng_seed: ${RNG_SEED}
+      - wrap_subset:
+          subset_str: ${RUN_ON_SUBSAMPLE}
+    dl_wrappers: []
+    dl_properties:
+      batch_size: ${DS_BATCHSIZE|1}
+
